@@ -1,0 +1,100 @@
+body {
+  /***
+      ADD YOUR CUSTOM STYLIING HERE. (INSIDE THE body {...} section.)
+      IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
+   ***/
+}
+body .navbar-title {
+  font-family: var(--font-title);
+  font-weight: normal;
+}
+body .index-grid {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-primary);
+}
+body .index-grid a {
+  text-decoration: none;
+}
+body .index-grid .block-link {
+  background-color: var(--background-primary);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  font-weight: normal;
+}
+body .index-grid .block-link div {
+  background-color: var(--background-primary);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: grid;
+  padding: 0 1rem;
+  justify-items: start;
+  align-items: center;
+}
+body .index-grid .block-link div span {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: large;
+  background-image: linear-gradient(90deg, palegreen 0%, palegreen 100%);
+  background-repeat: no-repeat;
+  background-position: 0 1em;
+}
+body .index-grid .block-link.home div {
+  color: var(--text-accent);
+  font-weight: bold;
+}
+body .index-grid .block-link.home div span {
+  font-family: var(--font-title);
+  font-weight: bold;
+}
+@media (min-width: 961px) {
+  body .index-grid {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: grid;
+    background-color: var(--background-secondary);
+  }
+  body .index-grid a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--text-accent);
+  }
+  body .index-grid a.home:hover {
+    text-decoration-color: white;
+    text-decoration-thickness: 0.05rem;
+  }
+  body .index-grid .block-link {
+    background-color: var(--background-secondary);
+  }
+  body .index-grid .block-link div {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+  }
+  body .index-grid .block-link div span {
+    background-image: none;
+  }
+  body .index-grid .block-link.home div {
+    background-color: var(--text-accent);
+    color: white;
+  }
+  body .index-grid .block-link.home div span {
+    font-weight: normal;
+    font-size: x-large;
+  }
+}
+
+/*# sourceMappingURL=custom-style.css.map */
