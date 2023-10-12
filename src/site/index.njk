@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ noteTitle }}</title>
+    {%include "components/pageheader.njk"%}
+    {# {% include "components/gridScript.njk" %} #}
+  </head>
+  <body class="theme-{{meta.baseTheme}}">
+    {%include "components/notegrowthhistory.njk"%}
+    
+    {% if settings.dgEnableSearch === true %}
+      {%include "components/searchContainer.njk"%}
+    {% endif %}
+
+    <div class="graph">
+        <div id="link-graph"></div>
+    </div>
+    {% include "components/graphView.njk" %}
+  </body>
+</html>

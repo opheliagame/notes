@@ -1,0 +1,77 @@
+<script>
+
+    const getCssVar = (variable) => getComputedStyle(document.body).getPropertyValue(variable);
+
+    function htmlDecode(input) {
+        var doc = new DOMParser().parseFromString(input, "text/html");
+        return doc.documentElement.textContent;
+    }
+
+    const gData = {
+      nodes: [
+        {% for node in graphViewData.nodes %}
+          {
+            id: {{node.id}},
+            title: "{{node.title}}",
+            url: "{{node.url | safe}}"
+          },
+        {% endfor %}
+      ],
+      links:  [
+        {% for link in graphViewData.links %}
+          {
+            source: {{link.source}},
+            target: {{link.target}},
+          },
+        {% endfor %}
+      ],
+    };
+
+
+    let Graph;
+    function renderGraph(width, height) {
+
+        if (Graph) {
+            Graph
+                .width(width)
+                .height(height);
+
+            Graph.zoomToFit()
+            Graph.zoom(3)
+            return;
+        }
+
+        Graph = ForceGraph()(document.getElementById('link-graph'))
+            .width(width)
+            .height(height)
+            .nodeCanvasObject((node, ctx) => {
+                const numberOfLinks = (node.links && node.links.length) || 2;
+                const numberOfNeighbours = (node.neighbors && node.neighbors.length) || 2;
+                const nodeR = Math.min(7, Math.max((numberOfLinks + numberOfNeighbours) / 2, 2));
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, nodeR, 0, 2 * Math.PI, false);
+                ctx.fillStyle = getCssVar("--text-accent");
+                ctx.fill();
+
+                const label = htmlDecode(node.title)
+                const fontSize = 3.5;
+                ctx.font = `${fontSize}px Sans-Serif`;
+
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'top';
+                ctx.fillText(label, node.x, node.y + nodeR + 2);
+            })
+            .linkColor(() => getCssVar("--text-muted") || getCssVar("--text-normal"))
+            .graphData(gData)
+            .onNodeClick(node => {
+                window.location = node.url;
+            });
+
+            setTimeout(() => {
+                Graph.zoomToFit();
+                Graph.zoom(3);
+            }, 10);
+    }
+
+    renderGraph(window.innerWidth,window.innerHeight);
+</script>

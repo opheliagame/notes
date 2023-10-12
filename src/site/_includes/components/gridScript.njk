@@ -1,0 +1,72 @@
+<script src="/javascript/quadtree.js"></script>
+<script src="/javascript/cssgrid.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', getGridContent, false);
+
+  const getCSSGridStyle = () => {
+    let qtree = new QuadTree(new Rectangle(200, 200, 200, 200), 2)
+    for (let i = 0; i < 18; i++) {
+      let p = new Point(Math.random() * 200 * 2, Math.random() * 200 * 2)
+      qtree.insert(p)
+    }
+
+    let grid = new CSSGrid(qtree, 200 * 2, 200 * 2)
+    let gridAreaString = grid.getGridAreaString()
+    let result = {
+      display: 'grid',
+      gridTemplateAreas: gridAreaString,
+      zIndex: -1,
+      width: '100vw',
+      height: '100vh',
+      position: 'absolute',
+      top: 0,
+      left: 0
+    }
+    return {
+      'gridAreaString': gridAreaString,
+      'gridIds': grid.gridIDs,
+    }
+  }
+
+  async function getGridContent() {
+    const style = getCSSGridStyle()
+    const gridAreaString = style.gridAreaString
+    let gridIds = style.gridIds
+    gridIds.sort((a, b) => 0.5 - Math.random())
+
+    let notes = await (await fetch('/index.json')).json()
+    notes = [
+      {
+        'permalink': '/',
+        'name': 'opheliagame',
+      },
+      ...notes.map(note => ({
+        'permalink': note.url,
+        'name': note.title
+      }))
+    ]
+
+    if (notes.length < gridIds.length) {
+      gridIds = gridIds.slice(0, notes.length)
+    }
+    else {
+      notes = notes.slice(0, gridIds.length)
+    }
+
+    notes.sort((a, b) => 0.5 - Math.random());
+    gridIds.forEach((id, index) => notes[index].gridArea = id)
+
+
+    const notesHtml = notes
+      .map(note => `<a class="block-link ${note.permalink == '/' ? "home" : ""}" style="grid-area: ${note.gridArea}; padding: ${Math.floor(Math.random() * 30)}px" href=${note.permalink}><div><span>${note.name}</span></div></a>`)
+      .join('')
+
+    let divHtml = `<div class="index-grid" style="grid-template-areas: ${gridAreaString}">${notesHtml}</div>`
+
+    let bodyDiv = document.getElementsByTagName('body')[0]
+    bodyDiv.insertAdjacentHTML('beforeend', divHtml)
+    console.log("end")
+
+  }
+
+</script>
