@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>d3 (x) radia (x) rekhta</title>
+    <title>thoughts begin here</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://unpkg.com/lunr/lunr.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -8201,7 +8201,7 @@ input.prompt-input {
 
     <div class="content cm-s-obsidian">
       
-        <h1>d3 (x) radia (x) rekhta</h1>
+        <h1>thoughts begin here</h1>
       
       <div class="header-meta">
         
@@ -8209,10 +8209,17 @@ input.prompt-input {
             
               
             
+              
+            
           </div>
         
       </div>
-      
+      <ul>
+<li><a class="internal-link is-unresolved" href="/notes/interactive-hypertext-fiction">interactive, hypertext fiction</a></li>
+<li><a class="internal-link " href="/projects/where-is-my-body/">where is my body</a></li>
+<li><a class="internal-link is-unresolved" href="/notes/on-highlighting">on highlighting</a></li>
+</ul>
+
     </div>
 
     
@@ -8248,18 +8255,22 @@ input.prompt-input {
 
     const backLinks = [];
 
-    const outbound = [].map(x => {
+    const outbound = [{
+                id: 1,
+                title: "where is my body",
+                url: "/projects/where-is-my-body/"
+            },].map(x => {
         x.id += backLinks.length;
         return x;
     });
 
     const outboundDuplicatesRemoved = outbound.filter(x => !backLinks.find(b => b.url === x.url));
 
-    const title = "draft poetry" || "Home"
+    const title = "thoughts begin here" || "Home"
     const currentNode = {
         title,
         id: 0,
-        url: "/projects/draft-poetry/"
+        url: "/thoughts-begin-here/"
     };
 
     const gData = {

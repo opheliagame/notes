@@ -8260,7 +8260,11 @@ input.prompt-input {
         return doc.documentElement.textContent;
     }
 
-    const backLinks = [];
+    const backLinks = [{
+                id: 1,
+                title: "thoughts begin here",
+                url: "/thoughts-begin-here/"
+            },];
 
     const outbound = [].map(x => {
         x.id += backLinks.length;
