@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>on highlighting</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://unpkg.com/lunr/lunr.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -7868,11 +7868,35 @@ input.prompt-input {
     
 
 
-    
   </head>
-  <body class="theme-light">
+  <body class="theme-light markdown-preview-view markdown-rendered markdown-preview-section">
     
     
+    
+      
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/" style="text-decoration: none;">
+                <h1 class="navbar-title" style="margin: 15px !important;">opheliagame</h1>
+            </a>
+        </div>
+        
+            <div class="search-button" onclick="toggleSearch()">
+    <span class="search-icon">
+        <i class="fa fa-search"></i>
+    </span>
+    <span class="search-text">
+        <span>Search</span>
+        <span style="font-size: 0.6rem; padding: 2px 2px 0 6px; text-align:center; transform: translateY(4px);" class="search-keys">
+            CTRL + K
+        </span>
+    </span>
+</div>
+        
+    </nav>
+    
+    
+
     
       <div class="search-container" id="globalsearch" onclick="toggleSearch()">
     <div class="search-box">
@@ -8175,10 +8199,50 @@ input.prompt-input {
 </script>
     
 
-    <div class="graph">
-        <div id="link-graph"></div>
+    <div class="content cm-s-obsidian">
+      
+        <h1>on highlighting</h1>
+      
+      <div class="header-meta">
+        
+          <div class="header-tags">
+            
+              
+            
+          </div>
+        
+      </div>
+      <p>why should we highlight in books, why should we write things in the margins?<br>
+how do we highlight, what makes the brain go this is something i want to see again later</p>
+<p>maybe when reading something for a test, the goal is clearer and so what needs to be retained in memory becomes easier to pinpoint.<br>
+but in situations like reading for fun or a book club how do i highlight?<br>
+i want to be able to go back to my highlights and leave notes, i want to understand my reading habits more and i want to make something help me get there!</p>
+
     </div>
-    <script>
+
+    
+      <div>
+      <div class="sidebar">
+            <div class="sidebar-container">
+
+                  
+                        <div class="graph">
+                              <div class="graph-title-container">
+                                    <div class="graph-title">Connected Pages</div>
+                              </div>
+                              <div id="link-graph"></div>
+                        </div>
+                        
+
+                        
+
+                              
+                              </div>
+                        </div>
+                  </div>
+
+                  
+                        <script>
 
     const getCssVar = (variable) => getComputedStyle(document.body).getPropertyValue(variable);
 
@@ -8187,411 +8251,68 @@ input.prompt-input {
         return doc.documentElement.textContent;
     }
 
-    const gData = {
-      nodes: [
-        
-          {
-            id: 0,
-            title: "interactive, hypertext fiction",
-            url: "/interactive-hypertext-fiction/"
-          },
-        
-          {
-            id: 1,
-            title: "on highlighting",
-            url: "/on-highlighting/"
-          },
-        
-          {
-            id: 2,
-            title: "silence",
-            url: "/poems/silence/"
-          },
-        
-          {
-            id: 3,
-            title: "taxi rides in the morning",
-            url: "/poems/taxi-rides-in-the-morning/"
-          },
-        
-          {
-            id: 4,
-            title: "the man",
-            url: "/poems/the-man/"
-          },
-        
-          {
-            id: 5,
-            title: "things i&#39;ll throw away",
-            url: "/poems/things-i-ll-throw-away/"
-          },
-        
-          {
-            id: 6,
-            title: "untitled",
-            url: "/poems/untitled/"
-          },
-        
-          {
-            id: 7,
-            title: "where is my body",
-            url: "/projects/where-is-my-body/"
-          },
-        
-          {
-            id: 8,
-            title: "Big Bang Nucleosynthesis",
-            url: "/quantum30/big-bang-nucleosynthesis/"
-          },
-        
-          {
-            id: 9,
-            title: "Cosmic Microwave Background",
-            url: "/quantum30/cosmic-microwave-background/"
-          },
-        
-          {
-            id: 10,
-            title: "Fields",
-            url: "/quantum30/fields/"
-          },
-        
-          {
-            id: 11,
-            title: "Heisenberg Uncertainty Principle",
-            url: "/quantum30/heisenberg-uncertainty-principle/"
-          },
-        
-          {
-            id: 12,
-            title: "Quantum Circuits",
-            url: "/quantum30/quantum-circuits/"
-          },
-        
-          {
-            id: 13,
-            title: "Quantum Entanglement",
-            url: "/quantum30/quantum-entanglement/"
-          },
-        
-          {
-            id: 14,
-            title: "Quantum Field Theory",
-            url: "/quantum30/quantum-field-theory/"
-          },
-        
-          {
-            id: 15,
-            title: "Quantum Logic Gates",
-            url: "/quantum30/quantum-logic-gates/"
-          },
-        
-          {
-            id: 16,
-            title: "Quantum State",
-            url: "/quantum30/quantum-state/"
-          },
-        
-          {
-            id: 17,
-            title: "Quantum tunnelling",
-            url: "/quantum30/quantum-tunnelling/"
-          },
-        
-          {
-            id: 18,
-            title: "Stern-Gerlach Experiment",
-            url: "/quantum30/stern-gerlach-experiment/"
-          },
-        
-          {
-            id: 19,
-            title: "computers are a fundamental feature of the universe",
-            url: "/quantum30/computers-are-a-fundamental-feature-of-the-universe/"
-          },
-        
-          {
-            id: 20,
-            title: "day 1",
-            url: "/quantum30/day-1/"
-          },
-        
-          {
-            id: 21,
-            title: "day 2",
-            url: "/quantum30/day-2/"
-          },
-        
-          {
-            id: 22,
-            title: "day 3",
-            url: "/quantum30/day-3/"
-          },
-        
-          {
-            id: 23,
-            title: "day 4",
-            url: "/quantum30/day-4/"
-          },
-        
-          {
-            id: 24,
-            title: "day 5",
-            url: "/quantum30/day-5/"
-          },
-        
-          {
-            id: 25,
-            title: "day 8",
-            url: "/quantum30/day-8/"
-          },
-        
-          {
-            id: 26,
-            title: "day 9",
-            url: "/quantum30/day-9/"
-          },
-        
-          {
-            id: 27,
-            title: "quantum30",
-            url: "/quantum30/index/"
-          },
-        
-          {
-            id: 28,
-            title: "neutrino",
-            url: "/quantum30/neutrino/"
-          },
-        
-          {
-            id: 29,
-            title: "qubit",
-            url: "/quantum30/qubit/"
-          },
-        
-          {
-            id: 30,
-            title: "thoughts begin here",
-            url: "/thoughts-begin-here/"
-          },
-        
-          {
-            id: 31,
-            title: "what is a digital garden",
-            url: "/what-is-a-digital-garden/"
-          },
-        
-          {
-            id: 32,
-            title: "chess board",
-            url: "/writings/chess-board/"
-          },
-        
-          {
-            id: 33,
-            title: "hello shader",
-            url: "/writings/hello-shader/"
-          },
-        
-          {
-            id: 34,
-            title: "mondrian",
-            url: "/writings/mondrian/"
-          },
-        
-          {
-            id: 35,
-            title: "texture land",
-            url: "/writings/texture-land/"
-          },
-        
-      ],
-      links:  [
-        
-          {
-            source: 12,
-            target: 28,
-          },
-        
-          {
-            source: 14,
-            target: 10,
-          },
-        
-          {
-            source: 16,
-            target: 29,
-          },
-        
-          {
-            source: 20,
-            target: 8,
-          },
-        
-          {
-            source: 20,
-            target: 9,
-          },
-        
-          {
-            source: 21,
-            target: 13,
-          },
-        
-          {
-            source: 21,
-            target: 17,
-          },
-        
-          {
-            source: 21,
-            target: 11,
-          },
-        
-          {
-            source: 21,
-            target: 19,
-          },
-        
-          {
-            source: 21,
-            target: 29,
-          },
-        
-          {
-            source: 22,
-            target: 14,
-          },
-        
-          {
-            source: 22,
-            target: 28,
-          },
-        
-          {
-            source: 23,
-            target: 16,
-          },
-        
-          {
-            source: 23,
-            target: 15,
-          },
-        
-          {
-            source: 23,
-            target: 12,
-          },
-        
-          {
-            source: 24,
-            target: 18,
-          },
-        
-          {
-            source: 24,
-            target: 11,
-          },
-        
-          {
-            source: 25,
-            target: 15,
-          },
-        
-          {
-            source: 25,
-            target: 13,
-          },
-        
-          {
-            source: 26,
-            target: 17,
-          },
-        
-          {
-            source: 27,
-            target: 20,
-          },
-        
-          {
-            source: 27,
-            target: 21,
-          },
-        
-          {
-            source: 27,
-            target: 22,
-          },
-        
-          {
-            source: 27,
-            target: 23,
-          },
-        
-          {
-            source: 27,
-            target: 24,
-          },
-        
-          {
-            source: 27,
-            target: 25,
-          },
-        
-          {
-            source: 27,
-            target: 26,
-          },
-        
-          {
-            source: 28,
-            target: 12,
-          },
-        
-          {
-            source: 28,
-            target: 15,
-          },
-        
-          {
-            source: 30,
-            target: 0,
-          },
-        
-          {
-            source: 30,
-            target: 7,
-          },
-        
-          {
-            source: 30,
-            target: 1,
-          },
-        
-          {
-            source: 31,
-            target: 32,
-          },
-        
-          {
-            source: 31,
-            target: 35,
-          },
-        
-          {
-            source: 31,
-            target: 34,
-          },
-        
-          {
-            source: 31,
-            target: 33,
-          },
-        
-      ],
+    const backLinks = [{
+                id: 1,
+                title: "thoughts begin here",
+                url: "/thoughts-begin-here/"
+            },];
+
+    const outbound = [].map(x => {
+        x.id += backLinks.length;
+        return x;
+    });
+
+    const outboundDuplicatesRemoved = outbound.filter(x => !backLinks.find(b => b.url === x.url));
+
+    const title = "on highlighting" || "Home"
+    const currentNode = {
+        title,
+        id: 0,
+        url: "/on-highlighting/"
     };
 
+    const gData = {
+        nodes: [
+            currentNode, 
+            ...backLinks,
+            ...outboundDuplicatesRemoved
+        ],
+        links: [
+            ...backLinks.map(backlink => ({source: backlink.id, target: 0})),
+            ...outboundDuplicatesRemoved.map(outlink => ({source: 0, target: outlink.id}))
+        ]
+    };
+
+    gData
+        .links
+        .forEach(link => {
+            const a = gData
+                .nodes
+                .find(x => x.id === link.source);
+            const b = gData
+                .nodes
+                .find(x => x.id === link.target);
+            if (a && b) {
+
+                !a.neighbors && (a.neighbors = []);
+                !b.neighbors && (b.neighbors = []);
+                a
+                    .neighbors
+                    .push(b);
+                b
+                    .neighbors
+                    .push(a);
+
+                !a.links && (a.links = []);
+                !b.links && (b.links = []);
+                a
+                    .links
+                    .push(link);
+                b
+                    .links
+                    .push(link);
+            }
+        });
 
     let Graph;
     function renderGraph(width, height) {
@@ -8638,7 +8359,150 @@ input.prompt-input {
             }, 10);
     }
 
-    renderGraph(window.innerWidth,window.innerHeight);
+    renderGraph(320,320);
 </script>
+                  
+    
+
+    
+      <!-- All credit for the link preview implementation goes to https://github.com/maximevaillancourt/digital-garden-jekyll-template/blob/master/_includes/link-previews.html -->
+<style>
+#tooltip-wrapper {
+  background: var(--background-primary);
+  padding: 1em;
+  border-radius: 4px;
+  overflow: hidden;
+  position: fixed;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  max-height: 300px;
+  font-size: 0.8em;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  transition: opacity 100ms;
+  unicode-bidi: plaintext;
+  overflow-y: scroll;
+  z-index: 10;
+}
+
+#tooltip-wrapper:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  unicode-bidi: plaintext;
+  height: 75px;
+}
+</style>
+<div style="opacity: 0; display: none;" id='tooltip-wrapper'>
+  <div id='tooltip-content'>
+  </div>
+</div>
+
+<iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src="">
+</iframe>
+
+<script>
+  var opacityTimeout;
+  var contentTimeout;
+  var transitionDurationMs = 100;
+
+  var iframe = document.getElementById('link-preview-iframe')
+  var tooltipWrapper = document.getElementById('tooltip-wrapper')
+  var tooltipContent = document.getElementById('tooltip-content')
+
+  var linkHistories = {};
+
+  function hideTooltip() {
+    opacityTimeout = setTimeout(function () {
+      tooltipWrapper.style.opacity = 0;
+      contentTimeout = setTimeout(function () {
+        tooltipContent.innerHTML = '';
+        tooltipWrapper.style.display = 'none';
+      }, transitionDurationMs + 1);
+    }, transitionDurationMs)
+  }
+
+  function showTooltip(event) {
+    var elem = event.target;
+    var elem_props = elem.getClientRects()[elem.getClientRects().length - 1];
+    var top = window.pageYOffset || document.documentElement.scrollTop;
+    if (event.target.getAttribute("href").indexOf("http") === -1 || event.target.getAttribute("href").indexOf(window.location.host) !== -1) {
+      if (!linkHistories[event.target.getAttribute("href")]) {
+        iframe.src = event.target.getAttribute("href")
+        iframe.onload = function () {
+          tooltipContentHtml = ''
+          tooltipContentHtml += '<div style="font-weight: bold; unicode-bidi: plaintext;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
+          tooltipContentHtml += iframe.contentWindow.document.querySelector('.content').innerHTML
+          tooltipContent.innerHTML = tooltipContentHtml
+          linkHistories[event.target.getAttribute("href")] = tooltipContentHtml
+          tooltipWrapper.style.display = 'block';
+          tooltipWrapper.scrollTop = 0;
+          setTimeout(function () {
+            tooltipWrapper.style.opacity = 1;
+          }, 1)
+        }
+      } else {
+        tooltipContent.innerHTML = linkHistories[event.target.getAttribute("href")]
+        tooltipWrapper.style.display = 'block';
+        setTimeout(function () {
+          tooltipWrapper.style.opacity = 1;
+        }, 1)
+      }
+
+      function getInnerWidth(elem) {
+        var style = window.getComputedStyle(elem);
+        return elem.offsetWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - parseFloat(style.borderLeft) - parseFloat(style.borderRight) - parseFloat(style.marginLeft) - parseFloat(style.marginRight);
+      }
+
+      tooltipWrapper.style.left = elem_props.left - (tooltipWrapper.offsetWidth / 2) + (elem_props.width / 2) + "px";
+
+      if ((window.innerHeight - elem_props.top) < (tooltipWrapper.offsetHeight)) {
+        tooltipWrapper.style.top = elem_props.top + top - tooltipWrapper.offsetHeight - 10 + "px";
+      } else if ((window.innerHeight - elem_props.top) > (tooltipWrapper.offsetHeight)) {
+        tooltipWrapper.style.top = elem_props.top + top + 35 + "px";
+      }
+
+      if ((elem_props.left + (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+        tooltipWrapper.style.left = "10px";
+      } else if ((document.body.clientWidth - elem_props.left - (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+        tooltipWrapper.style.left = document.body.clientWidth - tooltipWrapper.offsetWidth - 20 + "px";
+      }
+    }
+  }
+
+  function setupListeners(linkElement) {
+    linkElement.addEventListener('mouseleave', function (_event) {
+      hideTooltip();
+    });
+
+    tooltipWrapper.addEventListener('mouseleave', function (_event) {
+      hideTooltip();
+    });
+
+    linkElement.addEventListener('mouseenter', function (event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+      showTooltip(event);
+    });
+
+    tooltipWrapper.addEventListener('mouseenter', function (event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+    });
+  }
+
+  window.addEventListener("load", function(event) 
+  {
+    document.querySelectorAll('.internal-link').forEach(setupListeners);
+    document.querySelectorAll('.backlink-card a').forEach(setupListeners);
+  });
+</script>
+
+    
   </body>
 </html>
