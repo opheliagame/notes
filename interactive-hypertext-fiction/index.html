@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>thoughts begin here</title>
+    <title>interactive, hypertext fiction</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://unpkg.com/lunr/lunr.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -8201,7 +8201,7 @@ input.prompt-input {
 
     <div class="content cm-s-obsidian">
       
-        <h1>thoughts begin here</h1>
+        <h1>interactive, hypertext fiction</h1>
       
       <div class="header-meta">
         
@@ -8209,16 +8209,11 @@ input.prompt-input {
             
               
             
-              
-            
           </div>
         
       </div>
-      <ul>
-<li><a class="internal-link " href="/interactive-hypertext-fiction/">interactive, hypertext fiction</a></li>
-<li><a class="internal-link " href="/projects/where-is-my-body/">where is my body</a></li>
-<li><a class="internal-link is-unresolved" href="/notes/on-highlighting">on highlighting</a></li>
-</ul>
+      <p>Delany says that fiction in itself is interactive. While reading something, you think of something else and go and pick it up and read a passage. In that sense it is more interactive than interactive fiction since it doesn't narrow down the paths that the reader can take.</p>
+<p>But isn't this retained in any piece of text, whether it be printed or a hypertext fiction piece. In hypertext, the author gets to add more paths, more ways to fork away, but these exist in a separate layer on top of the already existing interaction of memory and remembrance.</p>
 
     </div>
 
@@ -8253,28 +8248,24 @@ input.prompt-input {
         return doc.documentElement.textContent;
     }
 
-    const backLinks = [];
-
-    const outbound = [{
+    const backLinks = [{
                 id: 1,
-                title: "interactive, hypertext fiction",
-                url: "/interactive-hypertext-fiction/"
-            },{
-                id: 2,
-                title: "where is my body",
-                url: "/projects/where-is-my-body/"
-            },].map(x => {
+                title: "thoughts begin here",
+                url: "/thoughts-begin-here/"
+            },];
+
+    const outbound = [].map(x => {
         x.id += backLinks.length;
         return x;
     });
 
     const outboundDuplicatesRemoved = outbound.filter(x => !backLinks.find(b => b.url === x.url));
 
-    const title = "thoughts begin here" || "Home"
+    const title = "interactive, hypertext fiction" || "Home"
     const currentNode = {
         title,
         id: 0,
-        url: "/thoughts-begin-here/"
+        url: "/interactive-hypertext-fiction/"
     };
 
     const gData = {
