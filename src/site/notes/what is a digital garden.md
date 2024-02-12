@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/what-is-a-digital-garden/","title":"what is a digital garden","tags":["gardenEntry"]}
+{"dg-publish":true,"permalink":"/what-is-a-digital-garden/","title":"what is a digital garden"}
 ---
 
 But before that; why do I have a website? 
